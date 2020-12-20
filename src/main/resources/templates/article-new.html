@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add a blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <header th:insert="blocks/header :: header"></header>
+    <div>
+        <h1>Add blog</h1>
+        <form action="/article/new" method="post">
+            <input type="text" name="title" placeholder="Input title of blog">
+            <input type="text" name="anons" placeholder="Input anons">
+            <textarea name="full_text" placeholder="Input all text"></textarea>
+            <button type="submit" class="btn waves-effect waves-light">Submit</button>
+        </form>
+    </div>
+    <div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

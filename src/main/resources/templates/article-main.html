@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Blogs</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </head>
+    <body>
+        <header th:insert="blocks/header :: header"></header>
+        <div class="container" th:each="article : ${articles}">
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card teal lighten-2 center-align">
+                        <div class="card-content white-text">
+                            <span class="card-title" th:text="${article.title}"/>
+                            <p th:text="${article.anons}"/>
+                        </div>
+                        <div class="card-action">
+                            <a th:href="'/article/' + ${article.id}">detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:insert="blocks/footer :: footer"></div>
+    </body>
+</html>
